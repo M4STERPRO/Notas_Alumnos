@@ -1,52 +1,35 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+#include <stdio.h>
+int main()
+{
+    int notas[20];
+    int i;
+    int a=0;
+    int d=0;
+    float suma, promedio;
+    
+    for (i=0; i<20; i++){
+        do{
+            printf ("Introduzca la nota número %d: ", i);
+            scanf ("%d", &notas[i]);
+            if (notas[i]>10){
+                printf("La nota ingresada no es válida. ");
+            }
+        } while (notas[i]>10);
+    }
+    for (i=0; i<20; i++){
+        if (notas[i]>=7){
+            a++;
+        }else{ 
+            d++;
+        }
+    }
+    printf("Hay %d alumnos aprobados" "\n", a);
+    printf("Hay %d alumnos que necesitan recuperar" "\n", d);
+    
+    for (i=0; i<20;i++){
+        suma += notas[i];
+    }
+    promedio = suma / 20;
+    printf("El promedio es %f", promedio);
+    return 0;
+}
